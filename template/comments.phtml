@@ -1,0 +1,57 @@
+<?= '<'.'?xml version="1.0" encoding="utf-8"?'.'>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
+        <script src="/js/main.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+        <title>Comments</title>
+    </head>
+    <body onload="body_onload()">
+        <div id="container">
+
+            <a href="#new" onclick="showForm(0)" id="addnewcomment">
+                Add new comment
+            </a>
+
+            <ul id="comments">
+                <?php
+                    if (count($this->comments) > 0):
+                        foreach ($this->comments as $comment) {
+                            $this->render('comment.phtml',array('comment' => $comment));
+                        }
+                    else:
+                ?>
+                    <li>
+                        <div class="comment-container">
+                            <div class="comment-wrapper">
+                                <div class="comment">
+                                    <div class="comment-body">
+                                        <p>There are no comments yet, but you can leave first comment here</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>       
+                <?php endif; ?>
+                <li id="form_placeholder">
+                    <div class="comment-container">
+                        <div class="comment-wrapper">
+                            <div class="comment">
+                                <div class="comment-body" id="form_placeholder_">
+                                    <a name="new"></a>
+                                    <?php
+                                        $this->render('addcomment.phtml',array('errors'=>$this->errors));
+                                    ?>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>                        
+            </ul>
+            <p id="footer">
+                <button class="button" onclick="showForm(0)">Add comment</button>
+            </p>
+        </div>
+    </body>
+</html>

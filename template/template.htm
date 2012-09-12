@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
+        <script src="/js/main.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+        
+        <title>Template</title>
+    </head>
+    <body>
+        <div id="container">
+
+            <a href="#" id="addnewcomment">
+                Add new comment
+            </a>
+
+                 
+            <ul id="comments">
+                <li>
+                    <div class="comment-container">
+                        <div class="comment-wrapper">
+                            <div class="comment">
+                                <div class="gravatar">
+                                    <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="email"/>
+                                </div>
+                                <div class="comment-body">
+                                    <p>
+                                        Comment goes here ... Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet 
+                                        Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet
+                                        Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet
+                                    </p>
+                                    <div class="comment-reply">
+                                        <button class="button">Reply</button>
+                                    </div>
+                                    <div class="comment-author">Author</div>
+                                    <div class="comment-date">12 Sep 2012 @ 10:11</div>
+                                </div>
+                                <ul>
+                                    <li>
+                                        
+                                        <div class="comment"> 
+                                            <div class="gravatar">
+                                                <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="email"/>
+                                            </div>
+                                            <div class="comment-body">
+                                                <p>
+                                                    Subcomment goes here ... Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet 
+                                        Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet
+                                        Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet
+                                                </p>
+                                                <div class="comment-reply">
+                                                    <button class="button">Reply</button>
+                                                </div>
+                                                <div class="comment-author">Author</div>
+                                                <div class="comment-date">12 Sep 2012 @ 10:11</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="comment-container">
+                        <div class="comment-wrapper">
+                            <div class="comment">
+                                <div class="gravatar">
+                                    <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="email"/>
+                                </div>  
+                                <div class="comment-body">
+                                    <p>
+                                        Comment # 2 goes here ...
+                                    </p>
+                                    <div class="comment-reply">
+                                        <button class="button">Reply</button>
+                                    </div>
+                                    <div class="comment-author">Author</div>
+                                    <div class="comment-date">12 Sep 2012 @ 10:11</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="comment-container">
+                        <div class="comment-wrapper">
+                            <div class="comment">
+                                <div class="comment-body">
+                                    <div id="addcomment">
+                                        <h3>Add comment</h3>
+                                        <form action="add-comment.php" method="POST">
+                                            <input type="text" name="authorname" id="form_authorname" placeholder="Name" class="form-element"/>
+                                            <input type="text" name="authoremail" id="form_authoremail" placeholder="Email" class="form-element"/>
+                                            <textarea name="comment" cols="60" rows="10" placeholder="Comment" id="form_comment" class="form-element"></textarea>
+                                            <div id="form_footer">
+                                                <input type="submit" class="button" name="formsubmit" id="form_submit" value="Add comment"/>
+                                                <a href="#">Cancel</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>                        
+            </ul>
+        </div>
+    </body>
+</html>

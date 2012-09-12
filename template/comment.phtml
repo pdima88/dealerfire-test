@@ -1,0 +1,37 @@
+<li>
+    <?php if (!$this->comment->parent): ?>
+        <div class="comment-container">
+            <div class="comment-wrapper">
+    <?php endif; ?>
+    <div class="comment">
+        <div class="gravatar">
+            <img src="http://www.gravatar.com/avatar/<?= md5($this->comment->email) ?>" alt="Gravatar"/>
+        </div>
+        <div class="comment-body">
+            <p>
+                <a name="comment_<?= $this->comment->id ?>">
+                    <?= $this->comment->comment ?>
+                </a>
+            </p>
+            <div class="comment-reply">
+                <button class="button" onclick="showForm(<?= $this->comment->id ?>)">Reply</button>
+            </div>
+            <div class="comment-author"><?= $this->comment->author ?></div>
+            <div class="comment-date"><?= date('j M Y @ H:i',strtotime($this->comment->date)) ?></div>
+            <div id="form_placeholder_<?= $this->comment->id ?>"></div>
+        </div>
+        <?php if ($this->comment->replies->count() > 0): ?>
+        <ul>
+            <?php 
+            foreach ($this->comment->replies->comments as $comment) {
+                $this->render('comment.phtml',array('comment' => $comment));
+            }
+            ?>
+        </ul>
+        <?php endif; ?>
+    </div>
+    <?php if (!$this->comment->parent): ?>
+            </div>
+        </div>
+    <?php endif; ?>
+</li>

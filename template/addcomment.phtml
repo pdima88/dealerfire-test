@@ -1,0 +1,31 @@
+<div id="addcomment">
+    <h3><a name="new">Add comment</a></h3>
+    <form action="" method="POST">
+        <input type="hidden" name="action" value="add"/>
+        <input type="hidden" name="replyto" value="" id="form_replyto"/>
+        <input type="text" name="authorname" id="form_authorname" placeholder="Name" class="form-element" value="<?= isset($_POST['authorname']) ? $_POST['authorname'] : '' ?>"/>
+        <?php if (isset($this->errors['author'])): ?>
+            <p class="error">
+                Please specify your name
+            </p>
+        <?php endif; ?>
+        <input type="text" name="authoremail" id="form_authoremail" placeholder="Email" class="form-element" value="<?= isset($_POST['authoremail']) ? $_POST['authoremail'] : '' ?>"/>
+        <?php if (isset($this->errors['email'])): ?>
+            <p class="error">
+                <?= ($this->errors['email'] == 'empty') ? 'Please specify your email' : 'Invalid email specified' ?>
+            </p>
+        <?php endif; ?>
+        <textarea name="comment" cols="60" rows="10" placeholder="Comment" id="form_comment" class="form-element"><?= 
+            isset($_POST['comment']) ? $_POST['comment'] : '' 
+        ?></textarea>
+        <?php if (isset($this->errors['comment'])): ?>
+            <p class="error">
+                Please type comment text
+            </p>
+        <?php endif; ?>
+        <div id="form_footer">
+            <input type="submit" class="button" name="formsubmit" id="form_submit" value="Add comment"/>
+            <a href="#" onclick="hideForm();return false;">Cancel</a>
+        </div>
+    </form>
+</div>
